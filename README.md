@@ -32,8 +32,16 @@ Done:
 4. Static Website
 - Created a static website from VS Code: https://wonderful-forest-022f38b03.4.azurestaticapps.net/
 
+
 13. Source Control
 - Added frontend resume to 
 15. CI/CD (Front end)
 - Fixed signed commits from VS Code
 - Fixed workflow from VS Code -> github -> Azure static web app
+
+
+
+Trying to get ARM template to deploy CDN
+- using github secrets is no easy tasks
+- lacking of storage for cloud shell got me in trouble:
+    "Error: The process '/usr/bin/az' failed with exit code 1"
