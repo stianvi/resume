@@ -29,5 +29,5 @@ jobs:
         with: 
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION}}
           resourceGroupName: ${{ env.ResourceGroupName }}
-          template: /arm/azuredeploy-cdn.json
-          parameters: /arm/azuredeploy-cdn.parameters.json
+          template: ./arm/azuredeploy-cdn.json
+          parameters: ./arm/azuredeploy-cdn.parameters.json
