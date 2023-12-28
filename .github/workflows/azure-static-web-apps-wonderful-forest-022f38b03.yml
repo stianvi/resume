@@ -14,7 +14,6 @@ jobs:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
     env:
-      subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION}}
       ResourceGroupName: ${{ secrets.AZURE_RG }}
       ResourceGroupLocation: ${{ secrets.AZURE_LOCATION }}
     name: Build and Deploy Job
@@ -26,8 +25,20 @@ jobs:
       
       - uses: azure/login@v1
         with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
-  
+          auth-type: IDENTITY
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}          
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          enable-AzPSSession: true
+          #creds: '{"clientId":"${{ secrets.AZURE_CLIENT_ID }}","clientSecret":"${{ secrets.AZURE_CLIENT_SECRET }}","subscriptionId":"${{ secrets.AZURE_SUBSCRIPTION_ID }}","tenantId":"${{ secrets.AZURE_TENANT_ID }}"}'
+
+
+      - name: Azure CLI script
+        uses: azure/CLI@v1
+        with:
+          azcliversion: latest
+          inlineScript: |
+              az account show
 
       - name: Build And Deploy
         id: builddeploy
