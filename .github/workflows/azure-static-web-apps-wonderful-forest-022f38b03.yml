@@ -23,7 +23,7 @@ jobs:
       - name: Run ARM deploy ResourceGroup
         uses: azure/arm-deploy@v1
         with:
-          subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
+          #subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
           template: ./arm/azuredeploy-resourcegroup.json
           parameters: /arm/azuredeploy-resourcegroup.parameters.json
 
