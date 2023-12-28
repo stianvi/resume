@@ -28,6 +28,6 @@ jobs:
         uses: azure/arm-deploy@v1
         with: 
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION}}
-          esourceGroupName: ${{ env.ResourceGroupName }}
+          resourceGroupName: ${{ env.ResourceGroupName }}
           template: /arm/azuredeploy-cdn.json
           parameters: /arm/azuredeploy-cdn.parameters.json
