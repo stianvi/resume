@@ -6,7 +6,7 @@
             "value": "cdn-resume"
         },
         "endpointName": {
-            "value": "resume.vikan.cloud"
+            "value": "cdn-endpoint-resume"
         },
         "originUrl": {
             "value": "wonderful-forest-022f38b03.4.azurestaticapps.net"
