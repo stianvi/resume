@@ -13,12 +13,21 @@ jobs:
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
+    env:
+      subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION}}
+      ResourceGroupName: ${{ secrets.AZURE_RG }}
+      ResourceGroupLocation: ${{ secrets.AZURE_LOCATION }}
     name: Build and Deploy Job
     steps:
       - uses: actions/checkout@v3
         with:
           submodules: true
           lfs: false
+      
+      - uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+  
 
       - name: Build And Deploy
         id: builddeploy
@@ -34,15 +43,18 @@ jobs:
           output_location: "/src" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
 
+      
       - name: Run ARM deploy CDN
         uses: azure/arm-deploy@v1
         with: 
-          subscriptionId: 2101eaf9-8aec-4219-9059-3b9da65d4fa7
-          resourceGroupName: resume
-          #resourceGroupName: ${{ secrets.AZURE_RG }}
+          #subscriptionId: 2101eaf9-8aec-4219-9059-3b9da65d4fa7
+          #resourceGroupName: resume
+          #subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION}}
+          ##resourceGroupName: ${{ secrets.AZURE_RG }}
           template: ./arm/azuredeploy-cdn.json
           parameters: ./arm/azuredeploy-cdn.parameters.json
-
+  
+  
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'

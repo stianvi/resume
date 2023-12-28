@@ -43,5 +43,8 @@ Done:
 
 Trying to get ARM template to deploy CDN
 - using github secrets is no easy tasks
-- lacking of storage for cloud shell got me in trouble:
+- lacking of service principal/deployment credentials got me in trouble:
     "Error: The process '/usr/bin/az' failed with exit code 1"
+    https://github.com/Azure/arm-deploy
+    https://github.com/marketplace/actions/azure-login#configure-deployment-credentials
+    
