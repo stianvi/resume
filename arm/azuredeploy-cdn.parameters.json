@@ -8,6 +8,12 @@
         "endpointName": {
             "value": "cdn-endpoint-resume"
         },
+        "customDomainName": {
+            "value": "resume.vikan.cloud"
+        },
+        "originHostName": {
+            "value": "cdn-endpoint-resume"
+        },
         "originUrl": {
             "value": "wonderful-forest-022f38b03.4.azurestaticapps.net"
         },
