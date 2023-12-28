@@ -47,4 +47,5 @@ Trying to get ARM template to deploy CDN
     "Error: The process '/usr/bin/az' failed with exit code 1"
     https://github.com/Azure/arm-deploy
     https://github.com/marketplace/actions/azure-login#configure-deployment-credentials
-    
+
+And when you finally get to see a new error message after 25 commits - you will be the happiest in the world.

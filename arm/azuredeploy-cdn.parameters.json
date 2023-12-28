@@ -9,7 +9,7 @@
             "value": "cdn-endpoint-resume"
         },
         "originUrl": {
-            "value": "https://wonderful-forest-022f38b03.4.azurestaticapps.net"
+            "value": "wonderful-forest-022f38b03.4.azurestaticapps.net"
         },
         "CDNSku": {
             "value": "Standard_Microsoft"
