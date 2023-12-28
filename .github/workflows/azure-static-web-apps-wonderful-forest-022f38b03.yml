@@ -36,6 +36,7 @@ jobs:
 
       - name: Run ARM deploy CDN
         uses: azure/arm-deploy@v1
+        continueOnError: true
         with:
           subscriptionId: 2101eaf9-8aec-4219-9059-3b9da65d4fa7
           resourceGroupName: resume
