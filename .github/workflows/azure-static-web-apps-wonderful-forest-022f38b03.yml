@@ -25,7 +25,7 @@ jobs:
         with:
           #subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
           template: ./arm/azuredeploy-resourcegroup.json
-          parameters: /arm/azuredeploy-resourcegroup.parameters.json
+          parameters: ./arm/azuredeploy-resourcegroup.parameters.json
 
       - name: Build And Deploy
         id: builddeploy
@@ -47,7 +47,7 @@ jobs:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
           resourceGroupName: ${{ secrets.AZURE_RG }}
           template: ./arm/azuredeploy-cdn.json
-          parameters: /arm/azuredeploy-cdn.parameters.json
+          parameters: ./arm/azuredeploy-cdn.parameters.json
 
 
   close_pull_request_job:
