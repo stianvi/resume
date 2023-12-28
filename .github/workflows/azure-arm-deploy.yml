@@ -1,0 +1,33 @@
+on: [push]
+name: Azure ARM deployment
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    env:
+      ResourceGroupName: ${{ secrets.AZURE_RG}}
+      ResourceGroupLocation: ${{ secrets.AZURE_LOCATION}}
+    steps:
+      - uses: actions/checkout@master
+      
+      - uses: azure/login@v1
+        with:
+          auth-type: SERVICE_PRINCIPAL
+          creds: '{"clientId":"${{ secrets.AZURE_CLIENT_ID }}","clientSecret":"${{ secrets.AZURE_CLIENT_SECRET }}","subscriptionId":"${{ secrets.AZURE_SUBSCRIPTION_ID }}","tenantId":"${{ secrets.AZURE_TENANT_ID }}"}'
+          #enable-AzPSSession: true
+
+
+      - uses: Azure/CLI@v1
+        with:
+          inlineScript: |
+            #!/bin/bash
+            az group create --name ${{ env.ResourceGroupName }} --location ${{ env.ResourceGroupLocation }}
+            echo "Azure resource group created"
+
+      - name: Run ARM deploy CDN
+        uses: azure/arm-deploy@v1
+        with: 
+          subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION}}
+          esourceGroupName: ${{ env.ResourceGroupName }}
+          template: /arm/azuredeploy-cdn.json
+          parameters: /arm/azuredeploy-cdn.parameters.json
