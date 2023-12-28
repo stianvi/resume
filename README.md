@@ -49,3 +49,7 @@ Trying to get ARM template to deploy CDN
     https://github.com/marketplace/actions/azure-login#configure-deployment-credentials
 
 And when you finally get to see a new error message after 25 commits - you will be the happiest in the world.
+
+
+6. DNS, using custom DNS name
+- since I had a few hours of troubleshooting arm deployment of CDN, I ended up configuring DNS manually. This is because the DNS name won't change that often. It is more important to have proper deployment of html, css, js and py code. 
