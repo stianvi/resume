@@ -37,8 +37,8 @@ jobs:
       - name: Run ARM deploy CDN
         uses: azure/arm-deploy@v1
         with:
-          subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
-          resourceGroupName: ${{ secrets.AZURE_RG }}
+          #subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
+          #resourceGroupName: ${{ secrets.AZURE_RG }}
           template: ./arm/azuredeploy-cdn.json
           parameters: ./arm/azuredeploy-cdn.parameters.json
 
