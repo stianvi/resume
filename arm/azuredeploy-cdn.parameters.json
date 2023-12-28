@@ -1,0 +1,21 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "profileName": {
+            "value": "cdn-resume"
+        },
+        "endpointName": {
+            "value": "cdn-endpoint-resume"
+        },
+        "originUrl": {
+            "value": "https://wonderful-forest-022f38b03.4.azurestaticapps.net"
+        },
+        "CDNSku": {
+            "value": "Standard_Microsoft"
+        },
+        "location": {
+            "value": "westeurope"
+        }
+    }
+}

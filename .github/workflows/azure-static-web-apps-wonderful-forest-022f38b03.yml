@@ -33,6 +33,15 @@ jobs:
           output_location: "/src" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
 
+      - name: Run ARM deploy CDN
+        uses: azure/arm-deploy@v1
+        with:
+          #subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
+          #resourceGroupName: ${{ secrets.AZURE_RG }}
+          template: ./arm/azuredeploy-cdn.json
+          parameters: /arm/azuredeploy-cdn.parameters.json
+
+
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
