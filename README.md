@@ -7,3 +7,4 @@ enabled :+1:
 TODO:
 - missing signed commits.
 - workflow fails.
+- continue on challenge
