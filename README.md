@@ -2,7 +2,10 @@
 Cloud Resume Change
 
 # Azure github workflow for static web apps
-enabled :+1:
+
+Next step:
+ - add custom domain to cdn, either cv.vikan.cloud or resume.vikan.cloud... depends on what resolves tomorrow
+
 
 Challenges
 1. Certification
@@ -56,3 +59,7 @@ And when you finally get to see a new error message after 25 commits - you will 
  Created a CNAME to point to the CDN endpoint.
 
  DNS takes forever! 
+
+ Ended up creating a A record with alias in azure dns! That is weird because A records normally points to ip addresses.
+
+ Didn't manage to create a custom domain in the CDN with ARM template. So manually added afterwards. As DNS is configured manually, this is not an issue.

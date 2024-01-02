@@ -8,9 +8,6 @@
         "endpointName": {
             "value": "cdn-endpoint-resume"
         },
-        "customDomainName": {
-            "value": "resume.vikan.cloud"
-        },
         "originHostName": {
             "value": "cdn-endpoint-resume"
         },
