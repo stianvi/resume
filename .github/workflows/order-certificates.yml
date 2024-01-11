@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: az-acme/setup-cli-action@v1
       with:
-        version: 0.2
+        version: 0.4
 
     - uses: azure/login@v1
       with:
