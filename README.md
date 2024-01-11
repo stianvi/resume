@@ -63,3 +63,14 @@ And when you finally get to see a new error message after 25 commits - you will 
  Ended up creating a A record with alias in azure dns! That is weird because A records normally points to ip addresses.
 
  Didn't manage to create a custom domain in the CDN with ARM template. So manually added afterwards. As DNS is configured manually, this is not an issue.
+
+ Adding https to the custom domain also took time - CDN needs to verify that you own domain before generating a certificate.
+ CDN verify dns didn't work - so ended up using cloudflare mail forwarding to get the digicert mail. 
+ https://cert-manager.io/docs/tutorials/getting-started-aks-letsencrypt/
+ see screenshot 20240108-1112 - creating AKS for cert!
+
+ Copy paste commands won't always work, luckily most have an easy fix.
+ screenshot 20240108-11:16
+
+Hopefully order-certificates.yml works...
+ 
