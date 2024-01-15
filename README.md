@@ -74,3 +74,18 @@ And when you finally get to see a new error message after 25 commits - you will 
 
 Hopefully order-certificates.yml works...
  
+
+acme cert get from keyvault-acmebot
+
+CDN to read keyvault:
+screenshot 20240111 22:50ish - error
+screenshot 20240111 22:50ish - in gui
+adding service principle that is hidden...
+
+Found out how to enable service principle identity under CDN option :) 
+Then it finally solved itself..
+
+Sucess!! next task :) 
+
+Javascript...
+
