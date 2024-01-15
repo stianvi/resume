@@ -89,3 +89,7 @@ Sucess!! next task :)
 
 Javascript...
 
+Initially created a short javascript to start with counter 0, increment value and alert. This to show the javascript working before creating cosmo db table and the python script.
+
+When the python script was finished and CORS enabled, the javascript could be finished with the correct python function url to update the stored value in cosmodb.
+

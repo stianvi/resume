@@ -3,6 +3,10 @@
  */
 
 // Fetch value from cosmo db via python api
+
+alert(fetch("https://pageviewupdater.azurewebsites.net/api/http_trigger?code=GRyanmDN1F6NCfi5CcWSH44tldLB5ygEtDcWbOU1UphkAzFu8XBi3Q=="));
+
+
 var counter = 0; // TODO
 
 // increment value
